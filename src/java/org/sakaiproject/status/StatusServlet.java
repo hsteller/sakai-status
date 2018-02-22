@@ -116,9 +116,7 @@ public class StatusServlet extends HttpServlet
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String path = getPathInfo(request);
-		System.out.println("path: \""+path+"\"");
-		
-		
+				
 		if ("/".equals(path) || path == null){		
 			request.getRequestDispatcher("/endpoints.jsp").forward(request, response);
 			return;
@@ -207,8 +205,6 @@ public class StatusServlet extends HttpServlet
 
 	protected void reportThreadDetails(PrintWriter pw) 
 	{
-
-
 		for(Thread thread : findAllThreads()) {
 			if(thread != null) {
 				String threadLocation = "";
